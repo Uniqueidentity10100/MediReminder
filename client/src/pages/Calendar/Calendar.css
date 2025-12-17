@@ -1,0 +1,254 @@
+.calendar-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+.calendar-header {
+  margin-bottom: 24px;
+}
+
+.week-navigator {
+  margin-bottom: 24px;
+}
+
+.week-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.week-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  background-color: var(--surface);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+.calendar-day:hover {
+  border-color: var(--primary-color);
+  background-color: var(--background);
+}
+
+.calendar-day.selected {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.calendar-day.today {
+  border-color: var(--secondary-color);
+}
+
+.day-label {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  opacity: 0.7;
+}
+
+.day-number {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.day-progress {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.calendar-day.selected .day-progress {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.day-progress-fill {
+  height: 100%;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.calendar-day.selected .day-progress-fill {
+  background-color: white;
+}
+
+.selected-date-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.selected-date-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dose-count {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dose-card {
+  padding: 20px;
+}
+
+.dose-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.dose-color-indicator {
+  width: 4px;
+  height: 56px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.dose-info-section {
+  flex: 1;
+}
+
+.dose-med-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.dose-med-dosage {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.dose-time-section {
+  text-align: right;
+}
+
+.dose-time {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.dose-status-section {
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: var(--background);
+  border-radius: 8px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.status-icon {
+  font-size: 20px;
+}
+
+.status-text {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-taken {
+  color: var(--secondary-color);
+}
+
+.status-missed {
+  color: var(--danger-color);
+}
+
+.status-skipped {
+  color: var(--warning-color);
+}
+
+.status-pending {
+  color: var(--text-secondary);
+}
+
+.taken-at-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.dose-notes {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.dose-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.dose-actions button {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .week-calendar {
+    gap: 4px;
+  }
+
+  .calendar-day {
+    min-height: 70px;
+    padding: 8px 4px;
+  }
+
+  .day-label {
+    font-size: 10px;
+  }
+
+  .day-number {
+    font-size: 16px;
+  }
+
+  .dose-actions {
+    flex-direction: column;
+  }
+
+  .dose-card-header {
+    flex-wrap: wrap;
+  }
+}
